@@ -34,6 +34,8 @@
 - [x] Tool name + schema + readOnlyHint
 - [x] Working engine + sample
 - [x] README / package.json / mcp.json
-- [ ] Public HTTPS or public repo
+- [x] Public GitHub repo
+- [x] HTTP JSON-RPC server (`http_server.py` + Dockerfile)
+- [ ] Deploy HTTPS host (Railway/Fly/Caddy) + domain proof
 - [ ] Stripe Connect (when selling)
 - [ ] Your OK to open publisher accounts

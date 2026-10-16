@@ -41,3 +41,14 @@ USD **$0.50–$2.00** per call (value-based).
 ## Disclaimer
 
 Rules are drafts for tooling demos. Not a substitute for platform ToS or counsel.
+
+
+## HTTP (for marketplace HTTPS)
+
+```bash
+python3 http_server.py          # listens on :8080  POST /mcp
+# optional: MCP_AUTH_TOKEN=secret PORT=8080 python3 http_server.py
+curl -s http://127.0.0.1:8080/health
+```
+
+Put this behind TLS (Caddy / Cloudflare / Railway / Fly). `Dockerfile` included.

@@ -1,0 +1,1 @@
+# stdlib only for http_server.py — no pip deps required
