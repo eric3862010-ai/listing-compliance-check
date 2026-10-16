@@ -1,0 +1,15 @@
+{
+  "name": "listing-compliance-check",
+  "version": "0.1.0",
+  "description": "MCP tool: marketplace listing compliance check (HKTVmall, Shopee MY)",
+  "private": true,
+  "bin": {
+    "listing-compliance-mcp": "./server.py"
+  },
+  "scripts": {
+    "start": "python3 server.py",
+    "check": "python3 engine.py --platform hktvmall --file sample_biotree.json"
+  },
+  "keywords": ["mcp", "ecommerce", "compliance", "hktvmall", "shopee"],
+  "license": "UNLICENSED"
+}

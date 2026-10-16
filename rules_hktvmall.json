@@ -1,0 +1,22 @@
+{
+  "platform": "hktvmall",
+  "version": "0.1.0",
+  "updated": "2026-10-17",
+  "rules": [
+    {"code": "HKTV_MED_CLAIM", "severity": "block", "trigger": "標題／描述寫「治／根治／藥效／醫療級」無註冊", "fix": "改功能描述，刪療效字"},
+    {"code": "HKTV_EXAGGERATE", "severity": "revise", "trigger": "「全港最平／第一／保證」無證據", "fix": "改為可核實比較或刪"},
+    {"code": "HKTV_COUNTERFEIT", "severity": "block", "trigger": "未授權品牌／「正品保證」卻無授權證明", "fix": "加授權證明或下架"},
+    {"code": "HKTV_RESTRICTED", "severity": "block", "trigger": "煙、酒（未核准）、武器、成人、處方藥", "fix": "不可上"},
+    {"code": "HKTV_SAFETY_STD", "severity": "revise", "trigger": "電器／玩具無安全標準字眼（如 CB／EN）", "fix": "補證書或標明適用標準"},
+    {"code": "HKTV_PARALLEL_LABEL", "severity": "revise", "trigger": "平行進口無標明「平行進口」", "fix": "標題／簡介加標註"},
+    {"code": "HKTV_WEIGHT_FALSE", "severity": "block", "trigger": "淨重／容量與實物不符", "fix": "對齊實測規格"},
+    {"code": "HKTV_IMAGE_MISMATCH", "severity": "revise", "trigger": "主圖產品與 SKU 不符／加誇張特效字", "fix": "換真機圖，刪誇大文字"},
+    {"code": "HKTV_BUNDLE_OPAQUE", "severity": "revise", "trigger": "組合裝未列清每件內容", "fix": "列明每件 SKU／數量"},
+    {"code": "HKTV_PRICE_BAIT", "severity": "block", "trigger": "劃線價明顯虛高／「限時」永久掛", "fix": "改真實原價或刪"},
+    {"code": "HKTV_CONTACT_OFF", "severity": "revise", "trigger": "引導 WhatsApp／站外付款", "fix": "刪站外聯絡"},
+    {"code": "HKTV_CATEGORY_WRONG", "severity": "revise", "trigger": "類目與產品不符", "fix": "改正確類目"},
+    {"code": "HKTV_LANG_MIX", "severity": "revise", "trigger": "繁中標題夾大量英／簡亂碼", "fix": "統一 zh-Hant-HK"},
+    {"code": "HKTV_STOCK_FAKE", "severity": "revise", "trigger": "「僅餘 1 件」長期不變", "fix": "同步真實庫存"},
+    {"code": "HKTV_IP_LOGO", "severity": "block", "trigger": "未授權使用平台／名人／奧運等標誌", "fix": "刪圖／字"}
+  ]
+}

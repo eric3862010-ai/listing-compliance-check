@@ -1,0 +1,22 @@
+{
+  "platform": "shopee_my",
+  "version": "0.1.0",
+  "updated": "2026-10-17",
+  "rules": [
+    {"code": "SPMY_MED_CLAIM", "severity": "block", "trigger": "cure／treat／FDA／醫療聲稱無 MDA 許可", "fix": "刪療效，只寫用途"},
+    {"code": "SPMY_HALAL_FALSE", "severity": "block", "trigger": "自稱 Halal 無 JAKIM／認可證", "fix": "刪或上載證書"},
+    {"code": "SPMY_PROHIBITED", "severity": "block", "trigger": "菸、酒、武器、成人、處方藥、仿冒", "fix": "不可上"},
+    {"code": "SPMY_IP_BRAND", "severity": "block", "trigger": "未授權品牌名／「authentic」無證明", "fix": "授權或下架"},
+    {"code": "SPMY_TITLE_KEYWORD", "severity": "revise", "trigger": "標題堆無關熱搜字、全大寫刷屏", "fix": "精簡真實標題"},
+    {"code": "SPMY_PRICE_MANIP", "severity": "block", "trigger": "虛高原價再假折扣", "fix": "真實價＋真實折扣"},
+    {"code": "SPMY_WEIGHT_SHIP", "severity": "revise", "trigger": "重量／尺寸與物流不符（易罰）", "fix": "對齊實際包裝"},
+    {"code": "SPMY_IMAGE_TEXT", "severity": "revise", "trigger": "主圖過多促銷字／與實物不符", "fix": "清潔主圖"},
+    {"code": "SPMY_LOCAL_FALSE", "severity": "revise", "trigger": "「Ready Stock MY」實際海外倉", "fix": "標明 origin／lead time"},
+    {"code": "SPMY_CATEGORY_WRONG", "severity": "revise", "trigger": "錯類目刷流量", "fix": "改正確類目"},
+    {"code": "SPMY_BUNDLE_UNCLEAR", "severity": "revise", "trigger": "Combo 未列每件", "fix": "列明內容"},
+    {"code": "SPMY_WARRANTY_VAGUE", "severity": "revise", "trigger": "「lifetime warranty」無條款", "fix": "寫清年期／範圍"},
+    {"code": "SPMY_PDPA_PII", "severity": "revise", "trigger": "listing 公開買家電話／身分", "fix": "刪個資"},
+    {"code": "SPMY_CURRENCY_MIX", "severity": "revise", "trigger": "價／描述混 HKD／SGD", "fix": "統一 MYR"},
+    {"code": "SPMY_STAR_FAKE", "severity": "block", "trigger": "要求／暗示刷好評換回贈", "fix": "刪誘導字"}
+  ]
+}

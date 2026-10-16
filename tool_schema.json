@@ -1,0 +1,139 @@
+{
+  "name": "listing_compliance_check",
+  "description": "Check a cross-platform product listing draft against merchant compliance rules. Returns pass/revise/block with scored issues. Platforms: hktvmall, shopee_my.",
+  "inputSchema": {
+    "type": "object",
+    "required": [
+      "platform",
+      "title"
+    ],
+    "properties": {
+      "platform": {
+        "type": "string",
+        "enum": [
+          "hktvmall",
+          "shopee_my"
+        ],
+        "description": "Target marketplace"
+      },
+      "title": {
+        "type": "string",
+        "description": "Listing title"
+      },
+      "description": {
+        "type": "string",
+        "description": "Full description / bullets"
+      },
+      "category": {
+        "type": "string",
+        "description": "Category path if known"
+      },
+      "claims": {
+        "type": "string",
+        "description": "Efficacy, certificate, or marketing claims"
+      },
+      "language": {
+        "type": "string",
+        "default": "zh-Hant-HK",
+        "description": "Listing language"
+      }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "required": [
+      "verdict",
+      "risk_score",
+      "safe_to_publish",
+      "issues",
+      "notes"
+    ],
+    "properties": {
+      "verdict": {
+        "type": "string",
+        "enum": [
+          "pass",
+          "revise",
+          "block"
+        ]
+      },
+      "risk_score": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "safe_to_publish": {
+        "type": "boolean"
+      },
+      "issues": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "code",
+            "severity",
+            "where",
+            "why",
+            "fix"
+          ],
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "severity": {
+              "type": "string",
+              "enum": [
+                "block",
+                "revise"
+              ]
+            },
+            "where": {
+              "type": "string"
+            },
+            "why": {
+              "type": "string"
+            },
+            "fix": {
+              "type": "string"
+            },
+            "matched": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "notes": {
+        "type": "string"
+      },
+      "meta": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "engine": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "pricing_hint": {
+    "per_call_usd": {
+      "min": 0.5,
+      "max": 2.0
+    },
+    "model": "value-based"
+  },
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "openWorldHint": false
+  }
+}

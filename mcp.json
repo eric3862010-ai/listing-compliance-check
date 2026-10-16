@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "listing-compliance": {
+      "command": "python3",
+      "args": ["server.py"],
+      "cwd": "."
+    }
+  }
+}
